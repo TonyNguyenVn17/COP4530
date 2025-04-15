@@ -1,0 +1,23 @@
+# visual studio
+*.suo
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.sbr
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+ipch/
+obj/
+obj_r/
+obja/
+obju/
+Debug/
+Release/
+.vscode/
