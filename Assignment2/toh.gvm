@@ -1,0 +1,45 @@
+# Thien Minh Nguyen - U11796783
+
+# Memory Layout:
+#   Slot 0: N        (Input: number of disks)
+#   Slot 1: Result   (Final value: 2^N - 1, representing moves)
+#   Slot 2: Counter  (Used for iteration; removed before output)
+
+# Ensure there is an input value and reset the accumulator.
+CHECKMEM 1
+CLEAR
+
+# If N is zero, there's no calculation needed; stop execution.
+INSERT 1
+AT 0
+JUMPNZERO 2
+HALT
+
+# Initialize both the counter and the result to 1.
+CLEAR
+ADDCONST 1
+INSERT 2
+ADDCONST 1
+SET 1
+
+# Compare the counter (Slot 2) with N (Slot 0).
+AT 0
+SUBMEM 2
+JUMPNZERO 6
+
+# When counter equals N, adjust result from 2^N to (2^N - 1) and clear the counter.
+AT 1
+SUBCONST 1
+SET 1
+ERASE 2
+HALT
+
+# Otherwise, double the current result and increment the counter,
+# then loop back to repeat the multiplication until counter equals N.
+AT 1
+MULCONST 2
+SET 1
+AT 2
+ADDCONST 1
+SET 2
+JUMPREL -14

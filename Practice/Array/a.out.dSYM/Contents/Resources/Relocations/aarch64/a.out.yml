@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/minhthiennguyen/Desktop/COP4150/Practice/Array/a.out'
+relocations:     []
+...
