@@ -68,6 +68,7 @@ void QuickSortStep(std::vector<E>& S, int a, int b, const C& less) {
 
     E pivot = S[b]; // pick last element as pivot
     std::cout << "Pivot = " << pivot << ", Subarray = [";
+    //  print the array
     for (int i = a; i <=b; i++)  std::cout << S[i] << (i < b ? ", " : "");
     std::cout << "]" << std::endl << std::endl;
 
